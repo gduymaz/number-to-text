@@ -4,7 +4,6 @@ namespace Splendour\NumberToText\Contracts;
 
 interface Translations
 {
-
     public function getUnitsDigits(): array;
 
     public function getTensDigits(): array;

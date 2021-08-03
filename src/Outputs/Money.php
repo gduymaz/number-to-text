@@ -7,7 +7,6 @@ use Splendour\NumberToText\Exceptions\NumberToTextException;
 
 class Money extends Output
 {
-
     /**
      * @var string
      */
@@ -19,17 +18,17 @@ class Money extends Output
 
     public function output(): string
     {
-
         if (empty($this->currency)) {
             throw new NumberToTextException('Currency is not found');
         }
-        $string = $this->text[0] . ' ' . $this->currency;
+        $string = $this->text[0].' '.$this->currency;
         if ($this->text[1]) {
             if (empty($this->decimals)) {
                 throw new NumberToTextException('Decimals is not found');
             }
-            $string .= ' ' . $this->text[1] . ' ' . $this->decimals;
+            $string .= ' '.$this->text[1].' '.$this->decimals;
         }
+
         return $string;
     }
 
