@@ -17,7 +17,7 @@ class NumberTest extends TestCase
         $number->setNumber(1.1);
         $this->assertEquals(1.1, $number->getNumber());
 
-        $number = new Number("1");
+        $number = new Number('1');
         $this->assertEquals(1, $number->getNumber());
     }
 
@@ -38,6 +38,6 @@ class NumberTest extends TestCase
     public function testInputIsNotNumber()
     {
         $this->expectException(NumberToTextException::class);
-        new Number("a");
+        new Number('a');
     }
 }

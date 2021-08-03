@@ -31,12 +31,14 @@ class Number
     {
         if (is_numeric($number)) {
             if ($number < 0) {
-                throw new NumberToTextException("input value is not a positive number");
+                throw new NumberToTextException('input value is not a positive number');
             } elseif (strlen(floor($number)) > 31) {
-                throw new NumberToTextException("input value is not 32-bit");
+                throw new NumberToTextException('input value is not 32-bit');
             }
+
             return true;
         }
-        throw new NumberToTextException("input value is not a number");
+
+        throw new NumberToTextException('input value is not a number');
     }
 }

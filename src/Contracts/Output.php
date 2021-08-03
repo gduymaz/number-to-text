@@ -4,7 +4,6 @@ namespace Splendour\NumberToText\Contracts;
 
 abstract class Output
 {
-
     /**
      * @var array
      */

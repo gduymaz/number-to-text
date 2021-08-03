@@ -3,8 +3,8 @@
 namespace Splendour\NumberToText;
 
 use Splendour\NumberToText\Exceptions\NumberToTextException;
-use Splendour\NumberToText\Outputs\Text;
 use Splendour\NumberToText\Outputs\Money;
+use Splendour\NumberToText\Outputs\Text;
 use Splendour\NumberToText\Translations\English;
 use Splendour\NumberToText\Translations\Turkish;
 
@@ -28,8 +28,8 @@ class NumberToText
 
     public function toText(): string
     {
-
         $text = new Text($this->convertToText());
+
         return $text->output();
     }
 
@@ -37,6 +37,7 @@ class NumberToText
     {
         $money = new Money($this->convertToText());
         $money->setCurrency($currency, $decimals);
+
         return $money->output();
     }
 
@@ -56,7 +57,7 @@ class NumberToText
         if (isset($transList[$this->translation])) {
             return $transList[$this->translation];
         } else {
-            throw new NumberToTextException("Translation not found");
+            throw new NumberToTextException('Translation not found');
         }
     }
 }
